@@ -1,6 +1,7 @@
 import React from 'react'
 import  './header.css'
 import { Link } from 'react-router-dom'
+import {PoPup} from '../../Components/PoPup/PoPup'
 
 export const Header = () => {
     return <>
@@ -12,7 +13,7 @@ export const Header = () => {
             <Link to='/news'>
                 <li>Новости</li>
             </Link>
-            <li>Вход/Выход</li>
+            <PoPup/>
         </ul>
     </header>
     </>
