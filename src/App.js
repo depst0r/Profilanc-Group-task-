@@ -1,5 +1,5 @@
 import { Header } from './Components/Menu/Header'
-import { Route, Switch } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import { NewsList } from './Components/News/NewsList'
 import { HomePage } from './Components/HomePage/HomePage'
 import './App.css';
