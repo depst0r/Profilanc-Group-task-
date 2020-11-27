@@ -5,20 +5,17 @@ export const LoginForm = () => {
     const [auth, setAuth] = useState(false)
 
     return <>
-        <div className="wrapper">
-            <div className="form">
-            <form>
-        <div className="form__login">
-            <label>Авторизация</label>
-            <input type="text"/>
-        </div>
-        <div className="form__password">
-            <label>Пароль</label>
-            <input type="pass"/>
-        </div>
-            <button className="form__btn">Вход</button>
-        </form>
-            </div>
-        </div>
+<form>
+   <div class="group">      
+      <input type="text" required />
+      <span class="bar"></span>
+      <label>Имя</label>
+   </div>
+   <div class="group">      
+      <input type="text" required />
+      <span class="bar"></span>
+      <label>Email</label>
+   </div>
+</form>
     </>
 }
