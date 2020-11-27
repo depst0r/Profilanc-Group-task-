@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { NAME, PASS } from '../../Redux/Actions/actions'
 import './LoginForm.css'
 
 const LoginForm = () => {
@@ -50,4 +51,6 @@ const errorMesage = () => {
     </>
 }
 
-export { LoginForm }
+
+
+export default LoginForm
