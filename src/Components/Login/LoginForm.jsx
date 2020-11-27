@@ -1,26 +1,31 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './LoginForm.css'
 
 export const LoginForm = () => {
 
-const [name, setName] = useState('')
-const [pass, setPass] = useState('')
 
-    const prevDef = e => {
-        e.preventDefault()
-    }
+const loginHandler = () => {
 
+}
+
+const submitHandler = e => {
+    e.preventDefault()
+}
+
+const errorMesage = () => {
+
+}
 
     return <>
         <div className="wrapper">
-        <form>
+        <form onSubmit={submitHandler}>
         <div className="group">      
             <input 
             type="text" 
             required
             />
             <span className="bar"></span>
-            <label>Имя</label>
+            <label>Login</label>
         </div>
         <div className="group">      
             <input 
@@ -28,12 +33,12 @@ const [pass, setPass] = useState('')
             required 
             />
             <span className="bar"></span>
-            <label>Пароль</label>
+            <label>Password</label>
         </div>
         <button 
-        onClick={prevDef}
+        onClick={loginHandler}
         >
-            Click
+            Войти
         </button>
         </form>
         </div>

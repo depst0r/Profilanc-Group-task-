@@ -5,7 +5,7 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import  reducer  from './Redux/reducer'
+import  reducer  from './Redux/Reducers/reducer'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 const store = createStore(reducer)
