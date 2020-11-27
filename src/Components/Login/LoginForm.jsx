@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useRef, useCallback } from 'react'
 import { connect } from 'react-redux'
-import { NAME, PASS } from '../../Redux/Actions/actions'
+import { pass, name} from '../../Redux/Actions/actions'
 import './LoginForm.css'
 
 const LoginForm = () => {
+
+const inputRef = useRef(null)
+
+const handler = useCallback(() => {
+    name(inputRef.current.value)
+}, [inputRef, name])
+
 
 const loginHandler = e => {
     if (e.target.value === 'Admin' || e.target.value === 'User') {
@@ -27,7 +34,7 @@ const errorMesage = () => {
         <div className="group">      
             <input 
             type="text" 
-            onChange={loginHandler}
+            ref={inputRef}
             required
             />
             <span className="bar"></span>
@@ -42,7 +49,7 @@ const errorMesage = () => {
             <label>Password</label>
         </div>
         <button 
-        onClick={loginHandler}
+        onClick={handler}
         >
             Войти
         </button>
@@ -51,6 +58,12 @@ const errorMesage = () => {
     </>
 }
 
+const mapStateToProps = state => ({
+    name: state.name
+})
 
+const mapDispatchToProps = {
+    name
+}
 
-export default LoginForm
+export default connect(mapStateToProps, mapDispatchToProps) (LoginForm)

@@ -1,4 +1,4 @@
 import { NAME, PASS } from './actionTypes'
 
-export const pass = text => ({ type: PASS, text })
-export const name = text => ({type: NAME, text})
+export const pass = payload => ({ type: PASS, payload })
+export const name = payload => ({ type: NAME, payload })
