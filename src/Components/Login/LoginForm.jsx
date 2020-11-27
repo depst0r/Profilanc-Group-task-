@@ -1,22 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './LoginForm.css'
 
 export const LoginForm = () => {
 
+const [name, setName] = useState('')
+const [pass, setPass] = useState('')
+
+    const prevDef = e => {
+        e.preventDefault()
+    }
+
+
     return <>
         <div className="wrapper">
         <form>
-        <div class="group">      
-            <input type="text" required />
-            <span class="bar"></span>
+        <div className="group">      
+            <input 
+            type="text" 
+            required
+            />
+            <span className="bar"></span>
             <label>Имя</label>
         </div>
-        <div class="group">      
-            <input type="password" required />
-            <span class="bar"></span>
+        <div className="group">      
+            <input 
+            type="password" 
+            required 
+            />
+            <span className="bar"></span>
             <label>Пароль</label>
         </div>
-        <button>Click</button>
+        <button 
+        onClick={prevDef}
+        >
+            Click
+        </button>
         </form>
         </div>
     </>
