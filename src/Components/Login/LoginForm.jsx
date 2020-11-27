@@ -1,21 +1,23 @@
-import React, { useState  } from 'react'
+import React from 'react'
 import './LoginForm.css'
 
 export const LoginForm = () => {
-    const [auth, setAuth] = useState(false)
 
     return <>
-<form>
-   <div class="group">      
-      <input type="text" required />
-      <span class="bar"></span>
-      <label>Имя</label>
-   </div>
-   <div class="group">      
-      <input type="text" required />
-      <span class="bar"></span>
-      <label>Email</label>
-   </div>
-</form>
+        <div className="wrapper">
+        <form>
+        <div class="group">      
+            <input type="text" required />
+            <span class="bar"></span>
+            <label>Имя</label>
+        </div>
+        <div class="group">      
+            <input type="password" required />
+            <span class="bar"></span>
+            <label>Пароль</label>
+        </div>
+        <button>Click</button>
+        </form>
+        </div>
     </>
 }

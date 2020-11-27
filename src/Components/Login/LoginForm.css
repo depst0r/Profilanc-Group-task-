@@ -27,7 +27,6 @@
     -webkit-transition: 0.2s ease all;
   }
   
-  /* active state */
   input:focus ~ label, input:valid ~ label {
     top: -15px;
     font-size: 14px;
@@ -35,7 +34,6 @@
   }
   
   
-  /* BOTTOM BARS ================================= */
   .bar {
     position: relative;
     display: block;
@@ -59,8 +57,12 @@
     right: 50%;
   }
   
-  /* active state */
   input:focus ~ .bar:before,
   input:focus ~ .bar:after {
     width: 50%;
+  }
+
+  .wrapper {
+    background: white;
+    margin-top: 13%;
   }
