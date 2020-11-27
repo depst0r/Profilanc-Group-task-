@@ -1,3 +1,5 @@
+import { NAME, PASS } from '../Actions/actionTypes'
+
 const initialState = {
     name: '',
     pass: '',
@@ -6,13 +8,13 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
-        case 'NAME':
+        case NAME:
                 console.log('NAME', action.data)
             return {
                 ...state,
                 name: action.data
             }
-        case 'PASS':
+        case PASS:
             console.log('PASS', action.data)
             return {
                 ...state,
