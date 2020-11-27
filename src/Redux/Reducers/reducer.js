@@ -6,14 +6,14 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
-        case 'name':
-                console.log('name', action.data)
+        case 'NAME':
+                console.log('NAME', action.data)
             return {
                 ...state,
                 name: action.data
             }
-        case 'pass':
-            console.log('pass', action.data)
+        case 'PASS':
+            console.log('PASS', action.data)
             return {
                 ...state,
                 pass: action.data

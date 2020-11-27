@@ -1,11 +1,15 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import './LoginForm.css'
 
-export const LoginForm = () => {
+const LoginForm = () => {
 
-
-const loginHandler = () => {
-
+const loginHandler = e => {
+    if (e.target.value === 'Admin' || e.target.value === 'User') {
+        console.log('true');
+    } else {
+        console.log(false);
+    }
 }
 
 const submitHandler = e => {
@@ -22,6 +26,7 @@ const errorMesage = () => {
         <div className="group">      
             <input 
             type="text" 
+            onChange={loginHandler}
             required
             />
             <span className="bar"></span>
@@ -44,3 +49,5 @@ const errorMesage = () => {
         </div>
     </>
 }
+
+export { LoginForm }
