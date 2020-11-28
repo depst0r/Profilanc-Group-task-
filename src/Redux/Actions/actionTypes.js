@@ -1,2 +1,1 @@
-export const NAME = 'NAME'
-export const PASS = 'PASS'
+export const NEWS = 'NEWS'

@@ -12,6 +12,10 @@ const submitHandler = e => {
 }
 
 
+const validate = () => {
+    
+}
+
     return <>
         <div className="wrapper">
         <form onSubmit={submitHandler}>
