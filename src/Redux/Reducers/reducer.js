@@ -1,4 +1,4 @@
-import { ADD_NEWS } from '../Actions/actionTypes'
+import { ADD_NEWS, TOGGLE_NEWS } from '../Actions/actionTypes'
 
 const initialNewsList = [
     {
@@ -39,6 +39,14 @@ export default function reducer(state = initialNewsList, action) {
                     completed: false,
                 }
             ]
+        case TOGGLE_NEWS:
+            if (state.id !== action.id) {
+                return state
+            }
+            return {
+                ...state,
+                completed: !state.completed
+            }
         default:
             return state
     }
