@@ -3,7 +3,7 @@ import './LoginForm.css'
 
 export const LoginForm = () => {
 
-const [userName, setUserName] = useState('')
+const [userName, setUserName] = useState('Гость')
 const [userPass, setUserPass] = useState('')
 
 
