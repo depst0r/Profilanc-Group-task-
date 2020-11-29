@@ -1,4 +1,4 @@
-import { ADD_NEWS, TOGGLE_NEWS } from '../Actions/actionTypes'
+import { ADD_NEWS, TOGGLE_NEWS, REMOVE_NEWS } from '../Actions/actionTypes'
 
 const initialNewsList = [
     {
@@ -40,13 +40,18 @@ export default function reducer(state = initialNewsList, action) {
                 }
             ]
         case TOGGLE_NEWS:
-            if (state.id !== action.id) {
-                return state
-            }
-            return {
-                ...state,
-                completed: !state.completed
-            }
+            return state.map((news, index) => {
+                if (index === action.index) {
+                    return {
+                        ...news,
+                        completed: !news.completed
+                    }
+                }
+            })
+        case REMOVE_NEWS:
+            return state.filter((news, index) => {
+                return index !== action.index
+            })
         default:
             return state
     }
