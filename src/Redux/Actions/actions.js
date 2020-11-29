@@ -1,3 +1,3 @@
-import { NEWS } from './actionTypes'
+import { ADD_NEWS } from './actionTypes'
 
-export const news = payload => ({ type: NEWS, payload })
+export const addNews = payload => ({ type: ADD_NEWS, payload })
