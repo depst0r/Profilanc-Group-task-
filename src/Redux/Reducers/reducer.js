@@ -27,18 +27,13 @@ const initialState = {
 }
 
 export default function reducer(state = initialState, action) {
+    let newsList
     switch (action.type) {
         case ADD_NEWS:
-            return [
-                ...state,
-                {
-                    id: Date.now(),
-                    title: action.title,
-                    date: new Date().toLocaleDateString(),
-                    text: action.text,
-                    completed: false,
-                }
-            ]
+            console.log('ADD', newsList)
+            newsList = [...state]
+            newsList.push(action.payload)
+            return newsList
         case TOGGLE_NEWS:
             return state.map((news, index) => {
                 if (index === action.index) {
@@ -49,9 +44,9 @@ export default function reducer(state = initialState, action) {
                 }
             })
         case REMOVE_NEWS:
-            return state.filter((news, index) => {
-                return index !== action.index
-            })
+            newsList = [...state]
+            newsList = newsList.filter(res => res.id !== action.payload)
+            return newsList
         default:
             return state
     }
