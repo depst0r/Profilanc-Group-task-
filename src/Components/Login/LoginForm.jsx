@@ -12,8 +12,12 @@ const submitHandler = e => {
 }
 
 
-const validate = () => {
-    
+const btnHandle = () => {
+    if ((userName === 'admin' && userPass === 'admin') || (userName === 'user' && userPass === 'user')) {
+        console.log('true');
+    } else {
+        console.log(false);
+    }
 }
 
     return <>
@@ -22,7 +26,7 @@ const validate = () => {
         <div className="group">      
             <input 
             type="text" 
-            onBlur={e => setUserName(e.target.value)}
+            onChange={e => setUserName(e.target.value)}
             value={userName}
             required
             />
@@ -32,7 +36,7 @@ const validate = () => {
         <div className="group">      
             <input 
             type="password" 
-            onBlur={e => setUserPass(e.target.value)}
+            onChange={e => setUserPass(e.target.value)}
             value={userPass}
             required 
             />
@@ -40,6 +44,7 @@ const validate = () => {
             <label>Password</label>
         </div>
         <button 
+        onClick={btnHandle}
         >
             Войти
         </button>
