@@ -22,7 +22,7 @@ const validate = () => {
         <div className="group">      
             <input 
             type="text" 
-            onChange={e => setUserName(e.target.value)}
+            onBlur={e => setUserName(e.target.value)}
             value={userName}
             required
             />
@@ -32,7 +32,7 @@ const validate = () => {
         <div className="group">      
             <input 
             type="password" 
-            onChange={e => setUserPass(e.target.value)}
+            onBlur={e => setUserPass(e.target.value)}
             value={userPass}
             required 
             />

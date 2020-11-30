@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import './News.css'
 
 export const CreateNews = () => {
 
@@ -8,11 +9,11 @@ export const CreateNews = () => {
     }
 
     return <>
-        <form onSubmit={submitHadl}>
+        <form className='form' onSubmit={submitHadl}>
             <div className="title">
                 <input type="text" placeholder="Title"/>
-                <input type="date"/>
                 <textarea name="" id="" cols="30" rows="10" placeholder="news"></textarea>
+                <button>post news</button>
             </div>
 
         </form>

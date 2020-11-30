@@ -26,7 +26,7 @@ const initialNewsList = [
 
 const initialState = {}
 
-export default function reducer(state = initialNewsList, action) {
+export default function reducer(state = initialState, action) {
     switch (action.type) {
         case ADD_NEWS:
             return [
