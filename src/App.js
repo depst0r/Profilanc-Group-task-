@@ -1,7 +1,7 @@
 import { Header } from './Components/Menu/Header'
 import { Route } from 'react-router-dom'
-import NewsList from './Components/News/NewsList'
 import { HomePage } from './Components/HomePage/HomePage'
+import NewsList from './Components/News/NewsList'
 import './App.css';
 
 function App() {
