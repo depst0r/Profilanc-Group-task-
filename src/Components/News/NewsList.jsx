@@ -1,9 +1,11 @@
 import React from 'react'
-import { CreateNews } from './CreateNews'
+import { useSelector } from 'react-redux'
+import CreateNews from './CreateNews'
 import './News.css'
-import { connect } from 'react-redux'
 
-export const NewsList = () => {
+
+const NewsList = () => {
+    const news = useSelector(state => state.news)
     return<>
         <input type="text" placeholder="Search" className='ser'/>
         <CreateNews />
@@ -16,3 +18,5 @@ export const NewsList = () => {
         </div>
     </>
 }
+
+export default NewsList

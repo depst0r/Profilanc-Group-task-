@@ -1,6 +1,6 @@
 import { Header } from './Components/Menu/Header'
 import { Route } from 'react-router-dom'
-import { NewsList } from './Components/News/NewsList'
+import NewsList from './Components/News/NewsList'
 import { HomePage } from './Components/HomePage/HomePage'
 import './App.css';
 
