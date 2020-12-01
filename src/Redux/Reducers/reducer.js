@@ -29,9 +29,9 @@ export default function reducer(state = initialState, action) {
         case ADD_NEWS:
         case TOGGLE_NEWS:
         case REMOVE_NEWS:
-            let newListNews = [...state]
-            newListNews = newListNews.filter(item => item.id !== action.payload)
-            return newListNews
+            return [...state],
+            state.filter(item => item.id !== action.payload)
+            
         default:
             return state
     }

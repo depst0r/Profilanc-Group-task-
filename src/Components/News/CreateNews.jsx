@@ -5,7 +5,7 @@ export const CreateNews = () => {
 
 const [title, setTitle] = useState()
 const [text, setText] = useState()
-
+   
     return <>
         <div>
             <div className="row m-2">
@@ -24,20 +24,24 @@ const [text, setText] = useState()
                 value={text}
                 />
                 <button 
-                onClick={() => addNews(
-                    {
-                        id: Date.now(),
-                        date: new Date().toLocaleDateString(),
-                        title: title,
-                        text: text
-                    }
-                )}
+                onClick={() => {
+                    addNews(
+                        {
+                            id: Date.now(),
+                            date: new Date().toLocaleDateString(),
+                            title: title,
+                            text: text
+                        }
+                    )
+                    setTitle('')
+                    setText('')
+                }}
                 className="col btn btn-primary mx-2">
                     Post News
                 </button>
             </div>
         </div>
-    </>
+</>
 }
 
 
