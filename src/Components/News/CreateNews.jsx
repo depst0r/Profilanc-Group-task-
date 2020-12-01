@@ -8,8 +8,11 @@ export const CreateNews = () => {
                 <input type="text"
                 className="col form-control" 
                 />
+                <input type="text"
+                className="col form-control" 
+                />
                 <button 
-                className="btn btn-primary mx-2">Post News</button>
+                className=" col btn btn-primary mx-2">Post News</button>
             </div>
         </div>
     </>
