@@ -1,16 +1,22 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { removeNews } from '../../Redux/Actions/actions'
 
 export const NewsItem = ({news}) => {
+    const dispatch = useDispatch()
     return<>
-        <div class="row">
-        <div class="col-sm-6">
-            <div class="card">
-            <div class="card-body">
+        <div className="row">
+        <div className="col-sm-6">
+            <div className="card">
+            <div className="card-body">
                 <p>{news.date}</p>
-                <h5 class="card-title">{news.title}</h5>
-                <p class="card-text">{news.text}</p>
-                <button class="btn btn-warning m-2">Accept</button>
-                <button class="btn btn-danger m-2">Delete</button>
+                <h5 className="card-title">{news.title}</h5>
+                <p className="card-text">{news.text}</p>
+                <button className="btn btn-warning m-2">Accept</button>
+                <button 
+                onClick={() => dispatch(removeNews(news.id))}
+                className="btn btn-danger m-2"
+                >Delete</button>
             </div>
             </div>
         </div>

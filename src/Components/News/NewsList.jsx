@@ -9,7 +9,7 @@ const NewsList = () => {
     return<>
         <CreateNews/>
       <div className="my-3">  
-        {newsItem.news.map(news => {
+        {newsItem.map(news => {
           return <NewsItem key={news.id}  news={news}/>
         })}
       </div>
