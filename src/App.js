@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom'
 import { HomePage } from './Components/HomePage/HomePage'
 import NewsList from './Components/News/NewsList'
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css'
 
 function App() {
   return (
