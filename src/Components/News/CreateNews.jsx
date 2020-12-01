@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { addNews } from '../../Redux/Actions/actions'
+import { useDispatch } from 'react-redux'
 
 export const CreateNews = () => {
 
 const [title, setTitle] = useState()
 const [text, setText] = useState()
+const dispatch = useDispatch()
    
     return <>
         <div>
@@ -25,13 +27,16 @@ const [text, setText] = useState()
                 />
                 <button 
                 onClick={() => {
-                    addNews(
-                        {
-                            id: Date.now(),
-                            date: new Date().toLocaleDateString(),
-                            title: title,
-                            text: text
-                        }
+                    dispatch(
+                        addNews(
+                            {
+                                id: Date.now(),
+                                date: new Date().toLocaleDateString(),
+                                title: title,
+                                text: text,
+                                compoleted: false 
+                            }
+                        )
                     )
                     setTitle('')
                     setText('')

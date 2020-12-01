@@ -27,11 +27,12 @@ const initialState = [
 export default function reducer(state = initialState, action) {
     switch (action.type) {
         case ADD_NEWS:
+            return [...state],
+            state.push(action.payload)
         case TOGGLE_NEWS:
         case REMOVE_NEWS:
             return [...state],
             state.filter(item => item.id !== action.payload)
-            
         default:
             return state
     }
