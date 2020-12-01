@@ -30,7 +30,8 @@ export default function reducer(state = initialState, action) {
         case TOGGLE_NEWS:
         case REMOVE_NEWS:
             let newListNews = [...state]
-            newListNews = newListNews.filter(item => item.id != action.payload)
+            newListNews = newListNews.filter(item => item.id !== action.payload)
+            return newListNews
         default:
             return state
     }
