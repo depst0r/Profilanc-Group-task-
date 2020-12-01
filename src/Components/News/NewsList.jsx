@@ -1,22 +1,15 @@
 import React from 'react'
 import { CreateNews } from './CreateNews'
-import './News.css'
+import { NewsItem } from './NewsItem'
 
 
 const NewsList = () => {
     return<>
-        <CreateNews/>
-        {/* <div>
-            {oneNews.news.map(news=> {
-              return  <div className="news" key={news.id}>
-              <div className="card">
-                <div className="card__name">{news.title}</div>
-                <div className="card__date">{news.date}</div>
-                <div className="card__text">{news.text}</div>
-              </div>
-          </div>
-            })}
-        </div> */}
+          <CreateNews/>
+          <h3>News</h3>
+          <NewsItem />
+          <NewsItem />
+          <NewsItem />
     </>
 }
 

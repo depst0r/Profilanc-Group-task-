@@ -39,10 +39,13 @@ export default function reducer(state = initialState, action) {
                     completed: false
                 }
             ]
-
         case TOGGLE_NEWS:
-            return (state.id !== action.id) ?
-                state : {...state, completed: !state.completed}
+            return state.map(n => state(n,action))
+        case REMOVE_NEWS:
+            return [
+                ...state,
+                state.splice(action.id, 1)
+            ]
         default:
             return state
     }
