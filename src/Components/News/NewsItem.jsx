@@ -4,6 +4,7 @@ import { removeNews } from '../../Redux/Actions/actions'
 
 export const NewsItem = ({news}) => {
     const dispatch = useDispatch()
+    
     return<>
         <div className="row">
         <div className="col-sm-6">

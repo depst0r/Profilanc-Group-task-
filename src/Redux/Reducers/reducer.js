@@ -26,9 +26,10 @@ const initialState = [
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
-        case ADD_NEWS:
-            return [...state],
-            state.push(action.payload)
+        case ADD_NEWS:    
+            let newNews = [...state]
+            newNews.push(action.payload)
+            return newNews       
         case TOGGLE_NEWS:
         case REMOVE_NEWS:
             return [...state],

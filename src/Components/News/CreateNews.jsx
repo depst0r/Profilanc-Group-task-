@@ -6,6 +6,7 @@ export const CreateNews = () => {
 
 const [title, setTitle] = useState()
 const [text, setText] = useState()
+
 const dispatch = useDispatch()
    
     return <>
@@ -31,8 +32,8 @@ const dispatch = useDispatch()
                         addNews(
                             {
                                 id: Date.now(),
-                                date: new Date().toLocaleDateString(),
                                 title: title,
+                                date: new Date().toLocaleDateString(),
                                 text: text,
                                 compoleted: false 
                             }
