@@ -3,7 +3,7 @@ import './LoginForm.css'
 
 export const LoginForm = () => {
 
-const [userName, setUserName] = useState('Гость')
+const [userName, setUserName] = useState('')
 const [userPass, setUserPass] = useState('')
 
 
@@ -14,7 +14,7 @@ const submitHandler = e => {
 
 const btnHandle = () => {
     if ((userName === 'admin' && userPass === 'admin') || (userName === 'user' && userPass === 'user')) {
-        console.log('true');
+        console.log('true')
     } else {
         console.log(false);
     }

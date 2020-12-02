@@ -1,5 +1,5 @@
 import React from 'react'
-import Popup from 'reactjs-popup';
+import Popup from 'reactjs-popup'
 import { LoginForm } from '../Login/LoginForm'
 
 export const PoPup = () => (
@@ -10,4 +10,4 @@ export const PoPup = () => (
         <LoginForm/>
       </div>
     </Popup>
-  );
+  )
