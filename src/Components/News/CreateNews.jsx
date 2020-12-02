@@ -15,14 +15,14 @@ const dispatch = useDispatch()
                 type="Text"
                 className="col form-control" 
                 placeholder="title"
-                onSubmit={e => setTitle(e.target.value)}
+                onChange={e => setTitle(e.target.value)}
                 value={title}
                 />
                 <input 
                 type="text"
                 className="col form-control" 
                 placeholder="Text"
-                onSubmit={e => setText(e.target.value)}
+                onChange={e => setText(e.target.value)}
                 value={text}
                 />
                 <button 
