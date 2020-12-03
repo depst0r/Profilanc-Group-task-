@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { removeNews } from '../../Redux/Actions/actions'
+import { removeNews, toggleNews } from '../../Redux/Actions/actions'
 
 export const NewsItem = ({news}) => {
     const dispatch = useDispatch()
@@ -13,7 +13,10 @@ export const NewsItem = ({news}) => {
                 <p>{news.date}</p>
                 <h5 className="card-title">{news.title}</h5>
                 <p className="card-text">{news.text}</p>
-                <button className="btn btn-warning m-2">Accept</button>
+                <button 
+                className="btn btn-warning m-2"
+                onClick={() => dispatch(toggleNews(news.completed))}
+                >Accept</button>
                 <button 
                 onClick={() => dispatch(removeNews(news.id))}
                 className="btn btn-danger m-2"

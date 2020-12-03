@@ -5,7 +5,8 @@ export const LoginForm = () => {
 
 const [userName, setUserName] = useState('')
 const [userPass, setUserPass] = useState('')
-const [validate, setValidate] = useState(Boolean)
+const [user, setUser] = useState(false)
+const [admin, setAdmin] = useState(false)
 
 
 const submitHandler = e => {
@@ -13,15 +14,14 @@ const submitHandler = e => {
 }
 
 
-
 const btnHandle = () => {
-    if ((userName === 'admin' && userPass === 'admin') || (userName === 'user' && userPass === 'user')) {
-        setValidate(true)
+    if (userName === 'admin' && userPass === 'admin')  {
+        setAdmin(true)
+    } else if ((userName === 'user' && userPass === 'user')) {
+        setUser(true)
     } else {
-        setValidate(false)
+        console.log('errr');
     }
-
-    validate ? console.log(true) : console.log(false)
 }
 
     return <>

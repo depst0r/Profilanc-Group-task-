@@ -31,6 +31,15 @@ export default function newsReducer(state = initialState, action) {
             newNews.push(action.payload)
             return newNews       
         case TOGGLE_NEWS:
+                return state.map(res => {
+                    if (res.id !== action.payload) {
+                        return res
+                    }
+                return {
+                    ...res,
+                    completed: !res.completed
+                }
+                })
         case REMOVE_NEWS:
             return [...state],
             state.filter(item => item.id !== action.payload)
