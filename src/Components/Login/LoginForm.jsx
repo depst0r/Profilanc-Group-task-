@@ -5,6 +5,7 @@ export const LoginForm = () => {
 
 const [userName, setUserName] = useState('')
 const [userPass, setUserPass] = useState('')
+const [validate, setValidate] = useState(Boolean)
 
 
 const submitHandler = e => {
@@ -12,38 +13,44 @@ const submitHandler = e => {
 }
 
 
+
 const btnHandle = () => {
     if ((userName === 'admin' && userPass === 'admin') || (userName === 'user' && userPass === 'user')) {
-        console.log('true')
+        setValidate(true)
     } else {
-        console.log(false);
+        setValidate(false)
     }
+
+    validate ? console.log(true) : console.log(false)
 }
 
     return <>
         <div className="wrapper">
         <form onSubmit={submitHandler}>
-        <div className="group">      
-            <input 
+        <div className="group">
+        <label>Login</label>      
+            <input
+            className="form-control" 
             type="text" 
             onChange={e => setUserName(e.target.value)}
             value={userName}
             required
             />
             <span className="bar"></span>
-            <label>Login</label>
         </div>
-        <div className="group">      
+        <div className="group">
+        <label className="mt-2">Password</label>      
             <input 
+            className="form-control"
             type="password" 
             onChange={e => setUserPass(e.target.value)}
             value={userPass}
             required 
             />
             <span className="bar"></span>
-            <label>Password</label>
         </div>
         <button 
+        className="btn btn-primary col mt-4"
         onClick={btnHandle}
         >
             Войти
