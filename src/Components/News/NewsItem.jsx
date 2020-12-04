@@ -2,9 +2,9 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { removeNews, toggleNews } from '../../Redux/Actions/actions'
 
-export const NewsItem = ({news}) => {
+export const NewsItem = ({ news }) => {
     const dispatch = useDispatch()
-    
+
     return<>
         <div className="row">
         <div className="col-sm-6">
@@ -15,7 +15,7 @@ export const NewsItem = ({news}) => {
                 <p className="card-text">{news.text}</p>
                 <button 
                 className="btn btn-warning m-2"
-                onClick={() => dispatch(toggleNews(news.completed))}
+                onClick={() => dispatch(toggleNews(news.completed = !news.completed))}
                 >Accept</button>
                 <button 
                 onClick={() => dispatch(removeNews(news.id))}
