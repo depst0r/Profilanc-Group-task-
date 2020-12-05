@@ -5,11 +5,11 @@ import { NewsItem } from './NewsItem'
 
 
 const NewsList = () => {
-  let newsItem = useSelector(state => state)
+  let newsItem = useSelector(state => state.news)
     return<>
         <CreateNews/>
       <div className="my-3">  
-        {newsItem.news.map(news => {
+        {newsItem.map(news => {
           return <NewsItem key={news.id}  news={news}/>
         })}
       </div>
