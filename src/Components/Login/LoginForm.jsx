@@ -1,12 +1,17 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import './LoginForm.css'
 
 export const LoginForm = () => {
 
+const state = useSelector(state => state)
+
+console.log(state);
+
 const [userName, setUserName] = useState('')
 const [userPass, setUserPass] = useState('')
-const [user, setUser] = useState(false)
-const [admin, setAdmin] = useState(false)
+// const [user, setUser] = useState()
+// const [admin, setAdmin] = useState()
 
 
 const submitHandler = e => {
@@ -14,15 +19,17 @@ const submitHandler = e => {
 }
 
 
-const btnHandle = () => {
-    if (userName === 'admin' && userPass === 'admin')  {
-        setAdmin(true)
-    } else if ((userName === 'user' && userPass === 'user')) {
-        setUser(true)
-    } else {
-        console.log('errr');
-    }
-}
+// const btnHandle = () => {
+//     if (userName === 'admin' && userPass === 'admin')  {
+//         setAdmin(true)
+//     } else if ((userName === 'user' && userPass === 'user')) {
+//         setUser(true)
+//     } else {
+//         setAdmin(false)
+//         setUser(false)
+//     }
+//     console.log(admin);
+// }
 
     return <>
         <div className="wrapper">
@@ -51,11 +58,12 @@ const btnHandle = () => {
         </div>
         <button 
         className="btn btn-primary col mt-4"
-        onClick={btnHandle}
+        // onClick={btnHandle}
         >
             Войти
         </button>
         </form>
+        
         </div>
     </>
 }

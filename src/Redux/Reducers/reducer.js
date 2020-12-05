@@ -24,6 +24,8 @@ const initialState = [
     },
 ]
 
+
+
 export default function newsReducer(state = initialState, action) {
     switch (action.type) {
         case ADD_NEWS:    
@@ -31,7 +33,6 @@ export default function newsReducer(state = initialState, action) {
             newNews.push(action.payload)
             return newNews       
         case TOGGLE_NEWS: 
-        
         case REMOVE_NEWS:
             return [...state],
             state.filter(item => item.id !== action.payload)

@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
-import { newsReducer } from './newsReducerucer'
+import newsReducer from './reducer'
+import usersReducer from './usersReducer'
 
-export default combineReducers({news: newsReducer})
+export default combineReducers({news: newsReducer, users: usersReducer})
